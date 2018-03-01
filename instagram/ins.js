@@ -124,7 +124,7 @@
         var data = res.data[j];
         var liTmpl = "";
 
-          var minSrc = '/img/photo/' + data.id + '.min.jpg';
+          var minSrc = '/img/photo/' + data.id + '.jpg';
           var src = '/img/photo/' + data.id + '.jpg';
           var type = 'image';
           var wrapText = data.caption || {};
