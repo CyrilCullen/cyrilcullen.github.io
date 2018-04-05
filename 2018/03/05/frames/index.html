@@ -6,18 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://cyrilcullen.github.io">
-  <title>Hello World | Cyril Cullen&#39;s Blog</title>
+  <title>GOP/ 码流 /码率 / 比特率 / 帧速率 / 分辨率的区别 | Cyril Cullen&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://cyrilcullen.github.io/del/hello-world.html">
+  <meta name="description" content="GOP/ 码流 /码率 / 比特率 / 帧速率 / 分辨率 GOP（Group of picture）关键帧的周期，也就是两个IDR帧之间的距离，一个帧组的最大帧数，一般而言，每一秒视频至少需要使用 1 个关键帧。增加关键帧个数可改善质量，但是同时增加带宽和网络负载。 需要说明的是，通过提高GOP值来提高图像质量是有限度的，在遇到场景切换的情况时，H.264编码器会自动强制插入一个I帧，此时实际的">
+<meta name="keywords" content="Video Surveillance">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GOP&#x2F; 码流 &#x2F;码率 &#x2F; 比特率 &#x2F; 帧速率 &#x2F; 分辨率的区别">
+<meta property="og:url" content="https://cyrilcullen.github.io/2018/03/05/frames/index.html">
 <meta property="og:site_name" content="Cyril Cullen&#39;s Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2018-02-28T14:04:07.207Z">
+<meta property="og:description" content="GOP/ 码流 /码率 / 比特率 / 帧速率 / 分辨率 GOP（Group of picture）关键帧的周期，也就是两个IDR帧之间的距离，一个帧组的最大帧数，一般而言，每一秒视频至少需要使用 1 个关键帧。增加关键帧个数可改善质量，但是同时增加带宽和网络负载。 需要说明的是，通过提高GOP值来提高图像质量是有限度的，在遇到场景切换的情况时，H.264编码器会自动强制插入一个I帧，此时实际的">
+<meta property="og:image" content="http://img.blog.csdn.net/20130815155556828?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZXZzcWllemk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:updated_time" content="2018-04-01T18:19:32.626Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="GOP&#x2F; 码流 &#x2F;码率 &#x2F; 比特率 &#x2F; 帧速率 &#x2F; 分辨率的区别">
+<meta name="twitter:description" content="GOP/ 码流 /码率 / 比特率 / 帧速率 / 分辨率 GOP（Group of picture）关键帧的周期，也就是两个IDR帧之间的距离，一个帧组的最大帧数，一般而言，每一秒视频至少需要使用 1 个关键帧。增加关键帧个数可改善质量，但是同时增加带宽和网络负载。 需要说明的是，通过提高GOP值来提高图像质量是有限度的，在遇到场景切换的情况时，H.264编码器会自动强制插入一个I帧，此时实际的">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20130815155556828?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZXZzcWllemk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
   
     <link rel="alternative" href="/atom.xml" title="Cyril Cullen&#39;s Blog" type="application/atom+xml">
   
@@ -148,35 +151,84 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-frames" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      GOP/ 码流 /码率 / 比特率 / 帧速率 / 分辨率的区别
     </h1>
   
 
         
-        <a href="/del/hello-world.html" class="archive-article-date">
-  	<time datetime="2018-02-28T14:47:21.818Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-28</time>
+        <a href="/2018/03/05/frames/" class="archive-article-date">
+  	<time datetime="2018-03-05T10:41:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p><strong>GOP/ 码流 /码率 / 比特率 / 帧速率 / 分辨率</strong></p>
+<h5 id="GOP（Group-of-picture）"><a href="#GOP（Group-of-picture）" class="headerlink" title="GOP（Group of picture）"></a>GOP（Group of picture）</h5><p>关键帧的周期，也就是两个IDR帧之间的距离，一个帧组的最大帧数，一般而言，每一秒视频至少需要使用 1 个关键帧。增加关键帧个数可改善质量，但是同时增加带宽和网络负载。</p>
+<p>需要说明的是，通过提高GOP值来提高图像质量是有限度的，在遇到场景切换的情况时，H.264编码器会自动强制插入一个I帧，此时实际的GOP值被缩短了。另一方面，在一个GOP中，P、B帧是由I帧预测得到的，当I帧的图像质量比较差时，会影响到一个GOP中后续P、B帧的图像质量，直到下一个GOP开始才有可能得以恢复，所以GOP值也不宜设置过大。<br><a id="more"></a></p>
+<p>同时，由于P、B帧的复杂度大于I帧，所以过多的P、B帧会影响编码效率，使编码效率降低。另外，过长的GOP还会影响Seek操作的响应速度，由于P、B帧是由前面的I或P帧预测得到的，所以Seek操作需要直接定位，解码某一个P或B帧时，需要先解码得到本GOP内的I帧及之前的N个预测帧才可以，GOP值越长，需要解码的预测帧就越多，seek响应的时间也越长。</p>
+<h5 id="CABAC-CAVLC"><a href="#CABAC-CAVLC" class="headerlink" title="CABAC/CAVLC"></a>CABAC/CAVLC</h5><p>H.264/AVC标准中两种熵编码方法，CABAC叫自适应二进制算数编码，CAVLC叫前后自适应可变长度编码，</p>
+<p>CABAC：是一种无损编码方式，画质好，X264就会舍弃一些较小的DCT系数，码率降低，可以将码率再降低10-15%（特别是在高码率情况下），会降低编码和解码的速速。</p>
+<p>CAVLC将占用更少的CPU资源，但会影响压缩性能。</p>
+<p>帧：当采样视频信号时，如果是通过逐行扫描，那么得到的信号就是一帧图像，通常帧频为25帧每秒（PAL制）、30帧每秒（NTSC制）；<br>场：当采样视频信号时，如果是通过隔行扫描（奇、偶数行），那么一帧图像就被分成了两场，通常场频为50Hz（PAL制）、60Hz（NTSC制）；<br>帧频、场频的由来：最早由于抗干扰和滤波技术的限制，电视图像的场频通常与电网频率（交流电）相一致，于是根据各地交流电频率不同就有了欧洲和中国等PAL制的50Hz和北美等NTSC制的60Hz，但是现在并没有这样的限制了，帧频可以和场频一样，或者场频可以更高。<br>帧编码、场编码方式：逐行视频帧内邻近行空间相关性较强，因此当活动量非常小或者静止的图像比较适宜采用帧编码方式；而场内相邻行之间的时间相关性较强，对运动量较大的运动图像则适宜采用场编码方式。</p>
+<h5 id="Deblocking"><a href="#Deblocking" class="headerlink" title="Deblocking"></a>Deblocking</h5><p>开启会减少块效应。</p>
+<h5 id="FORCE-IDR"><a href="#FORCE-IDR" class="headerlink" title="FORCE_IDR"></a>FORCE_IDR</h5><p>是否让每个I帧变成IDR帧，如果是IDR帧，支持随机访问。</p>
+<h5 id="frame-tff-bff"><a href="#frame-tff-bff" class="headerlink" title="frame,tff,bff"></a>frame,tff,bff</h5><p>–frame 将两场合并作为一帧进行编码,–tff Enable interlaced mode (开启隔行编码并设置上半场在前),–bff Enable interlaced mode。<br>PAFF 和MBAFF：当对隔行扫描图像进行编码时，每帧包括两个场，由于两个场之间存在较大的扫描间隔，这样，对运动图像来说，帧中相邻两行之间的空间相关性相对于逐行扫描时就会减小，因此这时对两个场分别进行编码会更节省码流。</p>
+<p>对帧来说，存在三种可选的编码方式：将两场合并作为一帧进行编码(frame 方式)或将两场分别编码(field 方式)或将两场合并起来作为一帧，但不同的是将帧中垂直相邻的两个宏块合并为宏块对进行编码；前两种称为PAFF 编码，对运动区域进行编码时field 方式有效，对非运区域编码时，由于相邻两行有较大的相关性，因而frame 方式会更有效。当图像同时存在运动区域和非运动区域时，在MB 层次上，对运动区域采取field 方式，对非运动区域采取frame 方式会更加有效，这种方式就称为MBAFF，预测的单位是宏块对。</p>
+<p><strong>码流 / 码率</strong>　</p>
+<p>　<strong>码流(Data Rate)是指视频文件在单位时间内使用的数据流量，也叫码率或码流率，通俗一点的理解就是取样率,是视频编码中画面质量控制中最重要的部分，一般我们用的单位是kb/s或者Mb/s。一般来说同样分辨率下，视频文件的码流越大，压缩比就越小，画面质量就越高。码流越大，说明单位时间内取样率越大，数据流，精度就越高，处理出来的文件就越接近原始文件，图像质量越好，画质越清晰，要求播放设备的解码能力也越高。</strong></p>
+<p>　<strong>　当然，码流越大，文件体积也越大，其计算公式是文件体积=时间X码率/8。例如，网络上常见的一部90分钟1Mbps码流的720P RMVB文件，其体积就=5400秒×1Mb/8=675MB。</strong></p>
+<p>　　通常来说，一个视频文件包括了画面及声音，例如一个RMVB的视频文件，里面包含了视频信息和音频信息，音频及视频都有各自不同的采样方式和比特率，也就是说，同一个视频文件音频和视频的比特率并不是一样的。而我们所说的一个视频文件码流率大小，一般是指视频文件中音频及视频信息码流率的总和。</p>
+<p>以以国内最流行，大家最熟悉的RMVB视频文件为例，RMVB中的VB，指的是VBR，即Variable Bit Rate的缩写，中文含义是可变比特率，它表示RMVB采用的是动态编码的方式，把较高的采样率用于复杂的动态画面(歌舞、飞车、战争、动作等)，而把较低的采样率用于静态画面，合理利用资源，达到画质与体积可兼得的效果。</p>
+<p><strong>码率和取样率最根本的差别就是码率是针对<a href="http://baike.baidu.com/view/385166.htm" target="_blank" rel="noopener">源文件</a>来讲的。</strong></p>
+<p><strong>采样率</strong></p>
+<p>采样率（也称为采样速度或者采样频率）定义了每秒从连续信号中提取并组成离散信号的采样个数，它用<a href="http://baike.baidu.com/view/19996.htm" target="_blank" rel="noopener">赫兹</a>（Hz）来表示。采样率是指将模拟信号转换成数字信号时的采样频率，也就是单位时间内采样多少点。一个采样点数据有多少个比特。比特率是指每秒传送的比特(bit)数。单位为 bps(Bit Per Second)，比特率越高，传送的数据越大，音质越好.比特率 =采样率 x 采用位数 x声道数.</p>
+<p>采样率类似于动态影像的帧数，比如电影的采样率是24赫兹，PAL制式的采样率是25赫兹，NTSC制式的采样率是30赫兹。当我们把采样到的一个个静止画面再以采样率同样的速度回放时，看到的就是连续的画面。同样的道理，把以44.1kHZ采样率记录的CD以同样的速率播放时，就能听到连续的声音。显然，这个采样率越高，听到的声音和看到的图像就越连贯。当然，人的听觉和视觉器官能分辨的采样率是有限的，基本上高于44.1kHZ采样的声音，绝大部分人已经觉察不到其中的分别了。</p>
+<p>而声音的位数就相当于画面的颜色数，表示每个取样的数据量，当然数据量越大，回放的声音越准确，不至于把开水壶的叫声和火车的鸣笛混淆。同样的道理，对于画面来说就是更清晰和准确，不至于把血和西红柿酱混淆。不过受人的器官的机能限制，16位的声音和24位的画面基本已经是普通人类的极限了，更高位数就只能靠仪器才能分辨出来了。比如电话就是3kHZ取样的7位声音，而CD是44.1kHZ取样的16位声音，所以CD就比电话更清楚。</p>
+<p>当你理解了以上这两个概念，比特率就很容易理解了。<strong>以电话为例，每秒3000次取样，每个取样是7比特，那么电话的比特率是21000。 而CD是每秒 44100次取样，两个声道，每个取样是13位PCM编码，所以CD的比特率是44100*2*13=1146600，也就是说CD每秒的数据量大约是 144KB，而一张CD的容量是74分等于4440秒，就是639360KB＝640MB。</strong></p>
+<p><strong>码率和取样率最根本的差别就是码率是针对<a href="http://baike.baidu.com/view/385166.htm" target="_blank" rel="noopener">源文件</a>来讲的。</strong></p>
+<p><strong>比特率</strong></p>
+<p><strong>比特率是指每秒传送的比特(bit)数。单位为bps(Bit Per Second)，比特率越高，传送的数据越大。在视频领域,比特率常翻译为码率 !!!</strong></p>
+<p>比特率表示经过编码（压缩）后的音、视频数据每秒钟需要用多少个比特来表示，而比特就是二进制里面最小的单位，要么是0，要么是1。比特率与音、视频压缩的关系，简单的说就是比特率越高，音、视频的质量就越好，但编码后的文件就越大；如果比特率越少则情况刚好相反。</p>
+<p><strong>比特率是指将数字声音、视频由模拟格式转化成数字格式的采样率，采样率越高，还原后的音质、画质就越好。</strong></p>
+<p>常见编码模式：</p>
+<p>　　VBR（Variable Bitrate）动态比特率 也就是没有固定的比特率，压缩软件在压缩时根据音频数据即时确定使用什么比特率，这是以质量为前提兼顾文件大小的方式，推荐编码模式；</p>
+<p>　　ABR（Average Bitrate）平均比特率 是VBR的一种插值参数。LAME针对CBR不佳的文件体积比和VBR生成文件大小不定的特点独创了这种编码模式。ABR在指定的文件大小内，以每50帧（30帧约1秒）为一段，低频和不敏感频率使用相对低的流量，高频和大动态表现时使用高流量，可以做为VBR和CBR的一种折衷选择。</p>
+<p>　　CBR（Constant Bitrate），常数比特率 指文件从头到尾都是一种位速率。相对于VBR和ABR来讲，它压缩出来的文件体积很大，而且音质相对于VBR和ABR不会有明显的提高。</p>
+<p><strong>帧速率</strong></p>
+<p>帧速率也称为FPS(Frames PerSecond)的缩写——帧/秒。是指每秒钟刷新的图片的帧数，也可以理解为图形处理器每秒钟能够刷新几次。越高的帧速率可以得到更流畅、更逼真的动画。每秒钟帧数(FPS)越多，所显示的动作就会越流畅。</p>
+<p><strong>分辨率</strong></p>
+<p>就是帧大小每一帧就是一副图像。</p>
+<p>640*480分辨率的视频，建议视频的码速率设置在700以上，音频采样率44100就行了</p>
+<p><strong>一个音频编码率为128Kbps，视频编码率为800Kbps的文件，其总编码率为928Kbps，</strong>意思是经过编码后的数据每秒钟需要用928K比特来表示。  </p>
+<p>计算输出文件大小公式：<br>（音频编码率（KBit为单位）/8 +视频编码率（KBit为单位）/8）×影片总长度（秒为单位）=文件大小（MB为单位）</p>
+<p><strong>2,高清视频</strong></p>
+<p>目前的720P以及1080P采用了很多种编码，例如主流的MPEG2，VC-1以及H.264，还有Divx以及Xvid，至于封装格式更多到令人发指，ts、mkv、wmv以及蓝光专用等等。</p>
+<p><strong>720和1080代表视频流的分辨率，前者1280*720，后者1920*1080，不同的编码需要不同的系统资源，大概可以认为是H.264&gt;VC-1&gt;MPEG2。 　　</strong></p>
+<p>VC-1是最后被认可的高清编码格式，不过因为有微软的后台，所以这种编码格式不能小窥。相对于MPEG2，VC-1的压缩比更高，但相对于H.264而言，编码解码的计算则要稍小一些，目前来看，VC-1可能是一个比较好的平衡，辅以微软的支持，应该是一只不可忽视的力量。<strong>一般来说，VC-1多为 “.wmv”</strong>后缀，但这都不是绝对的，具体的编码格式还是要通过软件来查询。</p>
+<p><strong>总的来说，从压缩比上来看，H.264的压缩比率更高一些，也就是同样的视频，通过H.264编码算法压出来的视频容量要比VC-1的更小，</strong>但是VC-1 格式的视频在解码计算方面则更小一些，一般通过高性能的CPU就可以很流畅的观看高清视频。相信这也是目前NVIDIA Geforce 8系列显卡不能完全解码VC-1视频的主要原因。</p>
+<p><strong>PS&amp;TS是两种视频或影片封装格式，常用于高清片。扩展名分别为VOB/EVO和TS等；其文件编码一般用MPEG2/VC-1/H.264</strong></p>
+<p>　高清，英文为“High Definition”，即指“高分辨率”。 高清电视(HDTV)，是由美国电影电视工程师协会确定的高清晰度电视标准格式。现在的大屏幕液晶电视机，一般都支持1080i和720P，而一些俗称的“全高清”(Full HD)，则是指支持1080P输出的电视机。</p>
+<p>目前的高清视频编码格式主要有H.264、VC-1、MPEG-2、MPEG-4、DivX、XviD、WMA-HD以及X264。事实上，现在网络上流传的高清视频主要以两类文件的方式存在：一类是经过MPEG-2标准压缩，以tp和ts为后缀的视频流文件;一类是经过WMV-HD(Windows Media Video HighDefinition)标准压缩过的wmv文件，还有少数文件后缀为avi或mpg，其性质与wmv是一样的。<strong>真正效果好的高清视频更多地以H.264与VC-1这两种主流的编码格式流传。</strong></p>
+<p><strong>一般来说，H.264格式以“.avi”、“.mkv”以及“.ts”封装比较常见。</strong></p>
+<h5 id="位率（定码率，变码率）"><a href="#位率（定码率，变码率）" class="headerlink" title="位率（定码率，变码率）"></a>位率（定码率，变码率）</h5><p>　 位率又称为“码率”。指单位时间内，单个录像通道所产生的数据量，其单位通常是bps、Kbps或Mbps。可以根据录像的时间与位率估算出一定时间内的录像文件大小。 　位率是一个可调参数，不同的分辨率模式下和监控场景下，合适的位率大小是不同的。在设置时，要综合考虑三个因素： 　　<br>1、分辨率 　　<br>分辨率是决定位率（码率）的主要因素，不同的分辨率要采用不同的位率。总体而言，录像的分辨率越高，所要求的位率（码率）也越大，但并不总是如此，图1说明了不同分辨率的合理的码率选择范围。所谓“合理的范围”指的是，如果低于这个范围，图像质量看起来会变得不可接受；如果高于这个范围，则显得没有必要，对于网络资源以及存储资源来说是一种浪费。 　　<br>2、场景 　　<br>监控的场景是设置码率时要考虑的第二个因素。在视频监控中，图像的运动剧烈程度还与位率有一定的关系，运动越剧烈，编码所要求的码率就越高。反之则越低。因此在同样的图像分辨率条件下，监控人多的场景和人少的场景，所要求的位率也是不同的。 　　<br>3、存储空间 　　<br>最后需要考量的因素是存储空间，这个因素主要是决定了录像系统的成本。位率设置得越高，画质相对会越好，但所要求的存储空间就越大。所以在工程实施中，设置合适的位率即可以保证良好的回放图像质量，又可以避免不必要的资源浪费。 　　<br>位率类型 　　<br>位率类型又称为码率类型，共有两种——动态码率（VBR）和固定码率（CBR）。所谓动态码率是指编码器在对图像进行压缩编码的过程中，根据图像的状况实时调整码率高低的过程，例如当图像中没有物体在移动时，编码器自动将码率调整到一个较低的值。但当图像中开始有物体移动时，编码器又自动将码率调整到一个较高的值，并且实时根据运动的剧烈程度进行调整。这种方式是一种图像质量不变，数据量变化的编码模式。 　　<br>固定码率是指编码器在对图像进行编码的过程中，自始至终采用一个固定的码率值，不论图像情况如何变化。这种方式是码率量不变，而图像质量变化的编码模式。在动态码率模式下，我们在硬盘录像机上设置的位率值称为“位率上限”。意思是我们人为设定一个编码码率变化的上限，可以低于，但不能高于。根据这个位率值，我们可以估算出一定时间内的存储容量的上限值。 　　<br>在固定码率模式下，在硬盘录像机上设置的位率值就是编码时所使用的位率值，根据这个数值，我们可以精确地估算出一定时间内的存储容量。</p>
+<h5 id="QP-quantizer-parameter"><a href="#QP-quantizer-parameter" class="headerlink" title="QP(quantizer parameter)"></a>QP(quantizer parameter)</h5><p>介于0~31之间，值越小，量化越精细，图像质量就越高，而产生的码流也越长。</p>
+<h5 id="PSNR"><a href="#PSNR" class="headerlink" title="PSNR"></a>PSNR</h5><p>允许计算峰值信噪比(PSNR,Peak signal-to-noise ratio),编码结束后在屏幕上显示PSNR计算结果。开启与否与输出的视频质量无关，关闭后会带来微小的速度提升。</p>
+<h4 id="profile-level"><a href="#profile-level" class="headerlink" title="profile level"></a>profile level</h4><p>分别是BP、EP、MP、HP：<br>　　1、BP-Baseline Profile：基本画质。支持I/P 帧，只支持无交错（Progressive）和CAVLC；<br>　　2、EP-Extended profile：进阶画质。支持I/P/B/SP/SI 帧，只支持无交错（Progressive）和CAVLC；<br>　　3、MP-Main profile：主流画质。提供I/P/B 帧，支持无交错（Progressive）和交错（Interlaced），也支持CAVLC 和CABAC 的支持；<br>　　4、HP-High profile：高级画质。在main Profile 的基础上增加了8x8内部预测、自定义量化、无损视频编码和更多的YUV 格式；</p>
+<p>H.264规定了三种档次，每个档次支持一组特定的编码功能，并支持一类特定的应用。<br>1）基本档次：利用I片和P片支持帧内和帧间编码，支持利用基于上下文的自适应的变长编码进行的熵编码（CAVLC）。主要用于可视电话、会议电视、无线通信等实时视频通信；<br>2）主要档次：支持隔行视频，采用B片的帧间编码和采用加权预测的帧内编码；支持利用基于上下文的自适应的算术编码（CABAC）。主要用于数字广播电视与数字视频存储；<br>3）扩展档次：支持码流之间有效的切换（SP和SI片）、改进误码性能（数据分割），但不支持隔行视频和CABAC。主要用于网络的视频流，如视频点播。</p>
+<p><img src="http://img.blog.csdn.net/20130815155556828?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZXZzcWllemk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
+<h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4><p>指两个P帧之间的距离。</p>
+<h4 id="主码流-副码流"><a href="#主码流-副码流" class="headerlink" title="主码流/副码流"></a>主码流/副码流</h4><p>主码流位率高，图像质量高，便于本地存储；副码流位率低，图像质量低，便于网络传输。  </p>
+<p>总结：</p>
+<p>编码参数不能只知道帧率，码率，I帧间隔，QP因子，更要知道其他参数的作用。</p>
 
       
 
@@ -185,6 +237,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Video Surveillance</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -235,7 +298,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://cyrilcullen.github.io/del/hello-world.html" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://cyrilcullen.github.io/2018/03/05/frames/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -247,6 +310,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2018/03/06/H265/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          H.265与H.264的区别技术分析
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/02/28/start/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Start with Hexo</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -313,7 +395,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
