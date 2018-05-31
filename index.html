@@ -146,6 +146,108 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-markdown" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/05/markdown/">Markdown学习</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/05/markdown/" class="archive-article-date">
+  	<time datetime="2018-04-05T09:22:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>###Markdown插入代码<br>在Hexo使用Markdown,与在其他地方略有不同，可以参考Hexo的官方文档<br>我的方法是使用三个` 加上c,具体在三个反引号后加什么，主要根据你的语言类型，具体有哪些类型可以参考这个网站。如果不知道就不加，或者加bash，不过这样就没有代码的高亮效果了。注意:在三个反引号和c之间需要有一个空格</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">include &lt;stdio.h&gt;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"hello markdown\n"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h5><p>如果只是插入一小段行内代码，可以在行内代码前后各加一个反引号就可以达到这种效果,但如果行内代码里，也有反引号，就需要在代码前后各加两个反引号，比如我这段代码里有`反引号。但我遇到的问题是，如果代码里有超过三个反引号，hexo就会和下面的代码区段混淆，问题还未解决。</p>
+<p>Markdown插入图片、音乐、视频<br>插入图片<br>代码如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![Alt text](/images/img.jpg)</span><br></pre></td></tr></table></figure>
+<p>一个惊叹号 !<br>接着一个方括号，里面放上图片的替代文字（可以不写）<br>接着一个普通括号，里面放上图片的地址。<br>关于图片网址，如果是本地的请自行调节好大小。<br>如果你使用的外部链接，建议使用七牛云存储,原因是它不仅可以存储图片，还可以帮助处理图片，从而返回合适的图片，如下面两张图片，一张会显示原始尺寸，一张则是缩略图。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![pic!](http://7xrmky.com1.z0.glb.clouddn.com/asset.PNG)</span><br><span class="line">![pic!](http://7xrmky.com1.z0.glb.clouddn.com/asset.PNG?imageView/2/h/400)</span><br></pre></td></tr></table></figure>
+<p>插入音乐<br>我是使用的是网易云音乐，找到喜欢的歌曲，点击生成外链播放器，把iframe插件的代码复制过来即可。原理是Markdown完全兼容HTML的代码。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=330 height=86 src=&quot;//music.163.com/outchain/player?type=2&amp;id=411236457&amp;auto=1&amp;height=66&quot;&gt;&lt;/iframe&gt;</span><br></pre></td></tr></table></figure></p>
+<p>效果如下：</p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=411236457&auto=1&height=66"></iframe>
+
+
+<p>音乐是默认随页面打开的，如果不希望自动播放，可以选择更改iframe的auto为0即可。</p>
+<p>插入视频<br>我使用的是youtube，找到视频点击分享，点击嵌入代码，把代码粘贴过来。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/fK_zwl-lnmc&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</span><br></pre></td></tr></table></figure></p>
+<p>但是上述代码仅在PC端显示，在移动端，固定的iframe长宽，会破坏布局。</p>
+<p>用Github上的一个表述就是Content exceeds the container which breaks the layout on mobile。<br>最终在Winter’s Land处找到答案。<br>代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;max-width:640px; margin:0 auto 10px;&quot; &gt;</span><br><span class="line">&lt;div </span><br><span class="line">style=&quot;position: relative; </span><br><span class="line">width:100%;</span><br><span class="line">padding-bottom:56.25%; </span><br><span class="line">height:0;&quot;&gt;</span><br><span class="line">&lt;iframe style=&quot;position: absolute;top: 0;left: 0;width: 100%;height: 100%;&quot;  src=&quot;https://www.youtube.com/embed/fK_zwl-lnmc&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>具体效果如下:(在手机端能够自适应)</p>
+<div style="max-width:640px; margin:0 auto 10px;"><br><div style="position: relative; 
+width:100%;
+padding-bottom:56.25%; 
+height:0;"><br><iframe style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;" src="https://www.youtube.com/embed/fK_zwl-lnmc" frameborder="0" allowfullscreen></iframe><br></div><br></div>
+
+
+
+
+<p>Markdown启用数学公式显示<br>一般主流的Hexo主题如yilia、Next等都已经设置好显示数学公式了，你只需要在theme的_config.yml中修改如下：</p>
+<h5 id="摘要链接文字"><a href="#摘要链接文字" class="headerlink" title="摘要链接文字"></a>摘要链接文字</h5><p>excerpt_link: more</p>
+<h5 id="图片弹出框"><a href="#图片弹出框" class="headerlink" title="图片弹出框"></a>图片弹出框</h5><p>fancybox: true</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Markdown</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/04/05/markdown/">More >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-leslie" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -552,11 +654,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">R6S</a>
+                <a href="javascript:void(0)" class="js-tag color4">Video Surveillance</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Gaming</a>
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">LeslieCheung</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -569,14 +675,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">教程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Video Surveillance</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">LeslieCheung</a>
               </li>
             
             <div class="clearfix"></div>

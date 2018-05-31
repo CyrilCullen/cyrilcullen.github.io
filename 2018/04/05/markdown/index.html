@@ -6,21 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://cyrilcullen.github.io">
-  <title>Start with Hexo | Cyril Cullen&#39;s Blog</title>
+  <title>Markdown学习 | Cyril Cullen&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装GitGit下载 设置user.name和user.email配置信息： 12git config --global user.name &quot;你的GitHub用户名&quot;git config --global user.email &quot;你的GitHub注册邮箱&quot;">
-<meta name="keywords" content="Hexo,Blog,教程">
+  <meta name="description" content="###Markdown插入代码在Hexo使用Markdown,与在其他地方略有不同，可以参考Hexo的官方文档我的方法是使用三个` 加上c,具体在三个反引号后加什么，主要根据你的语言类型，具体有哪些类型可以参考这个网站。如果不知道就不加，或者加bash，不过这样就没有代码的高亮效果了。注意:在三个反引号和c之间需要有一个空格 12345include &amp;lt;stdio.h&amp;gt;void mai">
+<meta name="keywords" content="Markdown">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Start with Hexo">
-<meta property="og:url" content="https://cyrilcullen.github.io/2018/02/28/start/index.html">
+<meta property="og:title" content="Markdown学习">
+<meta property="og:url" content="https://cyrilcullen.github.io/2018/04/05/markdown/index.html">
 <meta property="og:site_name" content="Cyril Cullen&#39;s Blog">
-<meta property="og:description" content="安装GitGit下载 设置user.name和user.email配置信息： 12git config --global user.name &quot;你的GitHub用户名&quot;git config --global user.email &quot;你的GitHub注册邮箱&quot;">
-<meta property="og:image" content="https://cyrilcullen.github.io/post_img/head.png">
-<meta property="og:updated_time" content="2018-03-01T09:19:10.000Z">
+<meta property="og:description" content="###Markdown插入代码在Hexo使用Markdown,与在其他地方略有不同，可以参考Hexo的官方文档我的方法是使用三个` 加上c,具体在三个反引号后加什么，主要根据你的语言类型，具体有哪些类型可以参考这个网站。如果不知道就不加，或者加bash，不过这样就没有代码的高亮效果了。注意:在三个反引号和c之间需要有一个空格 12345include &amp;lt;stdio.h&amp;gt;void mai">
+<meta property="og:updated_time" content="2018-05-31T13:02:51.052Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Start with Hexo">
-<meta name="twitter:description" content="安装GitGit下载 设置user.name和user.email配置信息： 12git config --global user.name &quot;你的GitHub用户名&quot;git config --global user.email &quot;你的GitHub注册邮箱&quot;">
-<meta name="twitter:image" content="https://cyrilcullen.github.io/post_img/head.png">
+<meta name="twitter:title" content="Markdown学习">
+<meta name="twitter:description" content="###Markdown插入代码在Hexo使用Markdown,与在其他地方略有不同，可以参考Hexo的官方文档我的方法是使用三个` 加上c,具体在三个反引号后加什么，主要根据你的语言类型，具体有哪些类型可以参考这个网站。如果不知道就不加，或者加bash，不过这样就没有代码的高亮效果了。注意:在三个反引号和c之间需要有一个空格 12345include &amp;lt;stdio.h&amp;gt;void mai">
   
     <link rel="alternative" href="/atom.xml" title="Cyril Cullen&#39;s Blog" type="application/atom+xml">
   
@@ -151,41 +149,55 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-start" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-markdown" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Start with Hexo
+      Markdown学习
     </h1>
   
 
         
-        <a href="/2018/02/28/start/" class="archive-article-date">
-  	<time datetime="2018-02-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-28</time>
+        <a href="/2018/04/05/markdown/" class="archive-article-date">
+  	<time datetime="2018-04-05T09:22:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/post_img/head.png" alt="headpic"></p>
-<h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><p><a href="https://git-scm.com/download/win" target="_blank" rel="noopener">Git下载</a></p>
-<p>设置user.name和user.email配置信息：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"你的GitHub用户名"</span></span><br><span class="line">git config --global user.email <span class="string">"你的GitHub注册邮箱"</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>生成ssh密钥文件：  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"你的GitHub注册邮箱"</span></span><br></pre></td></tr></table></figure>
-<p>于<a href="https://github.com/settings/keys" target="_blank" rel="noopener">GitHub SSH keys</a>设置生产的SSH密钥。</p>
-<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p><a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Node.js下载</a></p>
-<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli </span><br><span class="line">$ hexo init</span><br><span class="line">$ npm install</span><br><span class="line">$ hexo g  </span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-<h3 id="安装Hexo主题yilia"><a href="#安装Hexo主题yilia" class="headerlink" title="安装Hexo主题yilia"></a>安装Hexo主题yilia</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/litten/hexo-theme-yilia.git themes/yilia</span><br></pre></td></tr></table></figure>
-<p><strong>修改Hexo目录下的_config.yml配置文件中的theme属性，将其设置为yilia，并启用：</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> themes/yilia</span><br><span class="line">$ git pull</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-<h3 id="部署至GitHub-Pages"><a href="#部署至GitHub-Pages" class="headerlink" title="部署至GitHub Pages"></a>部署至GitHub Pages</h3><p><strong>修改配置文件配置文件_config.xml:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:******.github.io.git </span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+        <p>###Markdown插入代码<br>在Hexo使用Markdown,与在其他地方略有不同，可以参考Hexo的官方文档<br>我的方法是使用三个` 加上c,具体在三个反引号后加什么，主要根据你的语言类型，具体有哪些类型可以参考这个网站。如果不知道就不加，或者加bash，不过这样就没有代码的高亮效果了。注意:在三个反引号和c之间需要有一个空格</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">include &lt;stdio.h&gt;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"hello markdown\n"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h5><p>如果只是插入一小段行内代码，可以在行内代码前后各加一个反引号就可以达到这种效果,但如果行内代码里，也有反引号，就需要在代码前后各加两个反引号，比如我这段代码里有`反引号。但我遇到的问题是，如果代码里有超过三个反引号，hexo就会和下面的代码区段混淆，问题还未解决。</p>
+<p>Markdown插入图片、音乐、视频<br>插入图片<br>代码如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![Alt text](/images/img.jpg)</span><br></pre></td></tr></table></figure>
+<p>一个惊叹号 !<br>接着一个方括号，里面放上图片的替代文字（可以不写）<br>接着一个普通括号，里面放上图片的地址。<br>关于图片网址，如果是本地的请自行调节好大小。<br>如果你使用的外部链接，建议使用七牛云存储,原因是它不仅可以存储图片，还可以帮助处理图片，从而返回合适的图片，如下面两张图片，一张会显示原始尺寸，一张则是缩略图。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![pic!](http://7xrmky.com1.z0.glb.clouddn.com/asset.PNG)</span><br><span class="line">![pic!](http://7xrmky.com1.z0.glb.clouddn.com/asset.PNG?imageView/2/h/400)</span><br></pre></td></tr></table></figure>
+<p>插入音乐<br>我是使用的是网易云音乐，找到喜欢的歌曲，点击生成外链播放器，把iframe插件的代码复制过来即可。原理是Markdown完全兼容HTML的代码。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=330 height=86 src=&quot;//music.163.com/outchain/player?type=2&amp;id=411236457&amp;auto=1&amp;height=66&quot;&gt;&lt;/iframe&gt;</span><br></pre></td></tr></table></figure></p>
+<p>效果如下：</p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=411236457&auto=1&height=66"></iframe>
+
+
+<p>音乐是默认随页面打开的，如果不希望自动播放，可以选择更改iframe的auto为0即可。</p>
+<p>插入视频<br>我使用的是youtube，找到视频点击分享，点击嵌入代码，把代码粘贴过来。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/fK_zwl-lnmc&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</span><br></pre></td></tr></table></figure></p>
+<p>但是上述代码仅在PC端显示，在移动端，固定的iframe长宽，会破坏布局。</p>
+<p>用Github上的一个表述就是Content exceeds the container which breaks the layout on mobile。<br>最终在Winter’s Land处找到答案。<br>代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;max-width:640px; margin:0 auto 10px;&quot; &gt;</span><br><span class="line">&lt;div </span><br><span class="line">style=&quot;position: relative; </span><br><span class="line">width:100%;</span><br><span class="line">padding-bottom:56.25%; </span><br><span class="line">height:0;&quot;&gt;</span><br><span class="line">&lt;iframe style=&quot;position: absolute;top: 0;left: 0;width: 100%;height: 100%;&quot;  src=&quot;https://www.youtube.com/embed/fK_zwl-lnmc&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>具体效果如下:(在手机端能够自适应)</p>
+<div style="max-width:640px; margin:0 auto 10px;"><br><div style="position: relative; 
+width:100%;
+padding-bottom:56.25%; 
+height:0;"><br><iframe style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;" src="https://www.youtube.com/embed/fK_zwl-lnmc" frameborder="0" allowfullscreen></iframe><br></div><br></div>
+
+
+
+
+<p>Markdown启用数学公式显示<br>一般主流的Hexo主题如yilia、Next等都已经设置好显示数学公式了，你只需要在theme的_config.yml中修改如下：</p>
+<h5 id="摘要链接文字"><a href="#摘要链接文字" class="headerlink" title="摘要链接文字"></a>摘要链接文字</h5><p>excerpt_link: more</p>
+<h5 id="图片弹出框"><a href="#图片弹出框" class="headerlink" title="图片弹出框"></a>图片弹出框</h5><p>fancybox: true</p>
 
       
 
@@ -199,15 +211,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Blog</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">教程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Markdown</a>
         		</li>
       		
 		</ul>
@@ -263,7 +267,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://cyrilcullen.github.io/2018/02/28/start/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://cyrilcullen.github.io/2018/04/05/markdown/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -277,15 +281,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/03/05/frames/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          GOP/ 码流 /码率 / 比特率 / 帧速率 / 分辨率的区别
-        
-      </div>
-    </a>
   
+    <a href="/2018/04/01/leslie/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Miss you much Leslie</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
