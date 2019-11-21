@@ -146,6 +146,83 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-nighx" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/21/nighx/">nginx 上部署PHP</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/21/nighx/" class="archive-article-date">
+  	<time datetime="2019-11-21T06:07:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="环境：centos7-nginx1-16-1"><a href="#环境：centos7-nginx1-16-1" class="headerlink" title="环境：centos7  nginx1.16.1"></a>环境：centos7  nginx1.16.1</h3><h5 id="先将tp源代码下载到nginx目录下"><a href="#先将tp源代码下载到nginx目录下" class="headerlink" title="先将tp源代码下载到nginx目录下"></a>先将tp源代码下载到nginx目录下</h5><p>tp放到/usr/local/nginx/目录下，root为相对路径，如：</p>
+<p>tp在/usr/local/nginx/wwwroot/ 则 root wwwroot/public;</p>
+<p>tp不再nginx目录，则使用alias 绝对路径指定，不需要root。</p>
+<p>注意：存放tp的目录要有可执行权限，否则无法进入目录，访问报403</p>
+<h5 id="servr配置："><a href="#servr配置：" class="headerlink" title="servr配置："></a>servr配置：</h5><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">listen <span class="number">80</span>;</span><br><span class="line">server_name www.fanshehu.xyz localhost;</span><br><span class="line"></span><br><span class="line">charset utf8;　　</span><br><span class="line"></span><br><span class="line">access_log logs/host.access.log;</span><br><span class="line"></span><br><span class="line">root www/tp5/<span class="keyword">public</span>;</span><br><span class="line">index index.php index.html index.htm;　<span class="comment">#如果请求是站点根目录，则显示这些页面</span></span><br><span class="line"></span><br><span class="line">location / &#123; 　　　　　　　　　　　　　<span class="comment">#根目录，所有请求都能匹配到</span></span><br><span class="line">　　<span class="keyword">if</span> (!-e $request_filename) &#123;　　　　<span class="comment">#如果请求的不是一个文件或目录，则重写。否则请求是站点根目录或静态资源，nginx将静态资源以二进制流返回</span></span><br><span class="line">　　　　rewrite ^/(.*)$ /index.php/$<span class="number">1</span> last;</span><br><span class="line">　　　　<span class="keyword">break</span>;</span><br><span class="line">　　&#125;</span><br><span class="line">&#125;</span><br><span class="line">location ~ \.php &#123;　　　　　　　　<span class="comment">#如果请求有.php</span></span><br><span class="line">　　root www/tp5/<span class="keyword">public</span>;　　　　　　 </span><br><span class="line">　　fastcgi_pass <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">9000</span>;　　  <span class="comment">#交给php-fpm处理</span></span><br><span class="line">　　<span class="comment">#fastcgi_index index.php;　　　　#如果请求是网站根目录，则加上index.php在url后，此时$fastcgi_script_name等于index.php。在这里并不需要，可注释掉</span></span><br><span class="line">　　<span class="keyword">include</span> fastcgi.conf;　　　　　　  <span class="comment">#引入fastcgi.conf，里面有php-fpm需要的参数</span></span><br><span class="line">　　set $real_script_name $fastcgi_script_name;　　　<span class="comment">#　</span></span><br><span class="line">　　<span class="keyword">if</span> ($fastcgi_script_name ~ <span class="string">"^(.+?\.php)(/.+)$"</span>) &#123;</span><br><span class="line">　　set $real_script_name $<span class="number">1</span>;</span><br><span class="line">　　set $path_info $<span class="number">2</span>;</span><br><span class="line">　　&#125;</span><br><span class="line">　　fastcgi_param SCRIPT_FILENAME $document_root$real_script_name;　　<span class="comment">#此时脚本</span></span><br><span class="line">　　fastcgi_param SCRIPT_NAME $real_script_name;</span><br><span class="line">　　fastcgi_param PATH_INFO $path_info;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">｝</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/21/nighx/">More >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-markdown" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -666,6 +743,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
@@ -675,6 +756,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">教程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">--php</a>
               </li>
             
             <div class="clearfix"></div>
