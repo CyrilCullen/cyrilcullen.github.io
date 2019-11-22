@@ -146,6 +146,88 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ssh-keygen" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/22/ssh-keygen/">SSH-Keygen详解</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/22/ssh-keygen/" class="archive-article-date">
+  	<time datetime="2019-11-22T11:22:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="名称"><a href="#名称" class="headerlink" title="名称"></a>名称</h3><p>ssh-keygen - 生成、管理和转换认证密钥</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen [-q] [-b bits] -t type [-N new_passphrase] [-C comment] [-f output_keyfile]</span><br><span class="line">ssh-keygen -p [-P old_passphrase] [-N new_passphrase] [-f keyfile]</span><br><span class="line">ssh-keygen -i [-f input_keyfile]</span><br><span class="line">ssh-keygen -e [-f input_keyfile]</span><br><span class="line">ssh-keygen -y [-f input_keyfile]</span><br><span class="line">ssh-keygen -c [-P passphrase] [-C comment] [-f keyfile]</span><br><span class="line">ssh-keygen -l [-f input_keyfile]</span><br><span class="line">ssh-keygen -B [-f input_keyfile]</span><br><span class="line">ssh-keygen -D reader</span><br><span class="line">ssh-keygen -F hostname [-f known_hosts_file]</span><br><span class="line">ssh-keygen -H [-f known_hosts_file]</span><br><span class="line">ssh-keygen -R hostname [-f known_hosts_file]</span><br><span class="line">ssh-keygen -U reader [-f input_keyfile]</span><br><span class="line">ssh-keygen -r hostname [-f input_keyfile] [-g]</span><br><span class="line">ssh-keygen -G output_file [-v] [-b bits] [-M memory] [-S start_point]</span><br><span class="line">ssh-keygen -T output_file -f input_file [-v] [-a num_trials] [-W generator]</span><br></pre></td></tr></table></figure>
+<h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><p>ssh-keygen 用于为ssh(1)生成、管理和转换认证密钥，包括 RSA 和 DSA 两种密钥。<br>密钥类型可以用 -t 选项指定。如果没有指定则默认生成用于SSH-2的RSA密钥。<br>ssh-keygen 还可以用来产生 Diffie-Hellman group exchange (DH-GEX) 中使用的素数模数。<br>参见模数和生成小节。<br>一般说来，如果用户希望使用RSA或DSA认证，那么至少应该运行一次这个程序，在 ~/.ssh/identity, ~/.ssh/id_dsa 或 ~/.ssh/id_rsa 文件中创建认证所需的密钥。<br>
+        
+          <a class="article-more-a" href="/2019/11/22/ssh-keygen/#more">Continue.. >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vps</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ssh</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/22/ssh-keygen/">More >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-nighx" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -807,15 +889,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Internet</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">LeslieCheung</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Network,Internet</a>
+                <a href="javascript:void(0)" class="js-tag color4">vps</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vps,php</a>
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -831,23 +925,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">LeslieCheung</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Internet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vps</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">php</a>
+                <a href="javascript:void(0)" class="js-tag color4">ssh</a>
               </li>
             
             <div class="clearfix"></div>
